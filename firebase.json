@@ -1,0 +1,146 @@
+{   
+    "messages":
+        [
+            {
+                "id":1,"to":"628117405275","from":"628117405275","from_group":false,"from_me":true,"message":"Ini cuma pesan untuk test","media_url":null,"type":"text","status":"READ","created_at":"2021-05-05 03:32:22","updated_at":"2021-05-05 03:32:23","reply_for":0,"failed_reason":null,"timestamp":1620185543
+            },
+            {
+                "id":2,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"pesan dari alam","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 03:33:47","updated_at":"2021-05-05 03:33:50","reply_for":0,"failed_reason":null,"timestamp":1620185627
+            },
+            {
+                "id":3,"to":"628117405275","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nBerikut ini link reset password kamu : *https://senderpad.com/reset/?hash=ffd52f3c7e12435a724a8f30fddadd9c&val=27bd5771c669275c1749b4a7774d4cf3*\nklik link berikut, abaikan jika ini bukan kamu","media_url":null,"type":"text","status":"READ","created_at":"2021-05-05 03:35:17","updated_at":"2021-05-05 03:35:20","reply_for":0,"failed_reason":null,"timestamp":1620185719
+            },
+            {
+                "id":4,"to":"628117405275","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nPassword berhasil diganti, silahkan login kembali ","media_url":null,"type":"text","status":"READ","created_at":"2021-05-05 03:36:23","updated_at":"2021-05-05 03:36:24","reply_for":0,"failed_reason":null,"timestamp":1620185784
+            },
+            {
+                "id":5,"to":"628117405275","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nKamu telah login, abaikan jika ini benar kamu","media_url":null,"type":"text","status":"READ","created_at":"2021-05-05 03:41:19","updated_at":"2021-05-05 03:41:20","reply_for":0,"failed_reason":null,"timestamp":1620186079
+            },
+            {
+                "id":6,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"http://como.ap-1.evennode.com/static/uploads/951950972/20210318/145928-raw.jpg","type":"image","status":"FAILED","created_at":"2021-05-05 03:49:07","updated_at":"2021-05-05 03:49:08","reply_for":0,"failed_reason":"cannot send media : Response code 404 (Not Found)","timestamp":null
+            },
+            {
+                "id":7,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"https://senderpad.com/wp-content/uploads/2021/02/Senderpad.png","type":"image","status":"FAILED","created_at":"2021-05-05 03:49:45","updated_at":"2021-05-05 03:49:45","reply_for":0,"failed_reason":"cannot send media : unexpected end of file","timestamp":null
+            },
+            {
+                "id":8,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Message","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 03:51:00","updated_at":"2021-05-05 03:51:02","reply_for":0,"failed_reason":null,"timestamp":1620186660
+            },
+            {
+                "id":9,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"https://senderpad.com/wp-content/uploads/2021/02/Senderpad.png","type":"image","status":"FAILED","created_at":"2021-05-05 03:51:12","updated_at":"2021-05-05 03:51:12","reply_for":0,"failed_reason":"cannot send media : unexpected end of file","timestamp":null
+            },
+            {
+                "id":10,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"/media/1/3EB0C74108D2.png","type":"image","status":"READ","created_at":"2021-05-05 03:51:26","updated_at":"2021-05-05 03:51:31","reply_for":0,"failed_reason":null,"timestamp":1620186687
+            },
+            {
+                "id":11,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Message SSL","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:23:08","updated_at":"2021-05-05 04:23:12","reply_for":0,"failed_reason":null,"timestamp":1620188589
+            },
+            {
+                "id":12,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"/media/1/3EB0ED53FBF2.png","type":"image","status":"DELIVERED","created_at":"2021-05-05 04:23:28","updated_at":"2021-05-05 04:23:31","reply_for":0,"failed_reason":null,"timestamp":1620188610
+            },
+            {
+                "id":13,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"https://senderpad.com/wp-content/uploads/2021/02/Senderpad.png","type":"image","status":"FAILED","created_at":"2021-05-05 04:23:35","updated_at":"2021-05-05 04:23:36","reply_for":0,"failed_reason":"cannot send media : unexpected end of file","timestamp":null
+            },
+            {
+                "id":14,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"https://yt3.ggpht.com/ytc/AAUvwnjPAcz--FSs22TrdM4uhZah8wk8Ya9N0SBuJBhP=s48-c-k-c0x00ffffff-no-rj","type":"image","status":"FAILED","created_at":"2021-05-05 04:24:41","updated_at":"2021-05-05 04:24:42","reply_for":0,"failed_reason":"cannot send media : marker was not found","timestamp":null
+            },
+            {
+                "id":15,"to":"628561655028","from":"628117405275","from_group":false,"from_me":true,"message":"SenderPad Test Media Send","media_url":"/media/1/3EB085E22C5A.jpeg","type":"image","status":"DELIVERED","created_at":"2021-05-05 04:25:00","updated_at":"2021-05-05 04:25:03","reply_for":0,"failed_reason":null,"timestamp":1620188701
+            },
+            {
+                "id":16,"to":"6283812980380","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nBerikut ini kode verifikasi anda : *63AED9*\nsilahkan login ke dashboard lalu\ntulis kode diatas untuk verifikasi.\n\nTerimakasih\n*SenderPad*","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:26:49","updated_at":"2021-05-05 04:45:14","reply_for":0,"failed_reason":null,"timestamp":1620188810
+            },
+            {
+                "id":17,"to":"6283812980380","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nKamu telah login, abaikan jika ini benar kamu","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:27:17","updated_at":"2021-05-05 04:45:15","reply_for":0,"failed_reason":null,"timestamp":null
+            },
+            {
+                "id":18,"to":"6283812980380","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nKamu telah login, abaikan jika ini benar kamu","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:27:18","updated_at":"2021-05-05 04:45:15","reply_for":null,"failed_reason":null,"timestamp":1620188838
+            },
+            {
+                "id":19,"to":"6283812980380","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nKamu telah login, abaikan jika ini benar kamu","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:27:36","updated_at":"2021-05-05 04:45:16","reply_for":0,"failed_reason":null,"timestamp":null
+            },
+            {
+                "id":20,"to":"6283812980380","from":"628117405275","from_group":false,"from_me":true,"message":"*SenderPad*\nKamu telah login, abaikan jika ini benar kamu","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 04:27:37","updated_at":"2021-05-05 04:45:16","reply_for":null,"failed_reason":null,"timestamp":1620188857
+            }, 
+            {
+                "id": 21,
+                "to": "628117405275",
+                "from": "628117405275",
+                "from_group": false,
+                "from_me": true,
+                "message": "WKWK",
+                "media_url": null,
+                "type": "text",
+                "status": "READ",
+                "created_at": "2021-10-24 03:32:22",
+                "updated_at": "2021-10-24 03:32:23",
+                "reply_for": 0,
+                "failed_reason": null,
+                "timestamp": 1620185543
+            },
+            {
+                "id":22,"to":"628117405275","from":"628561655028","from_group":false,"from_me":false,"message":"pesan dari alam 1","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 03:42:47","updated_at":"2021-05-05 03:33:50","reply_for":0,"failed_reason":null,"timestamp":1620185627
+            },
+            {
+                "id":23,"to":"628117405275","from":"628561655028","from_group":false,"from_me":false,"message":"pesan dari alam 2","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-05-05 03:42:47","updated_at":"2021-05-05 03:33:50","reply_for":0,"failed_reason":null,"timestamp":1620185627
+            },
+            {
+                "id":24,"to":"628117405275","from":"628561655028","from_group":false,"from_me":false,"message":"pesan dari alam 3","media_url":null,"type":"text","status":"DELIVERED","created_at":"2021-10-24 03:33:47","updated_at":"2021-10-24 03:33:50","reply_for":0,"failed_reason":null,"timestamp":1620185627
+            }
+        ],
+    "users": [
+        {
+            "id": 1,
+            "nama": "Ihsan Sayid",
+            "avatar": "./assets/img/avatar-2.png",
+            "email": "admin1@gmail.com",
+            "noHp": "628117405275",
+            "notif": 5,
+            "online": false
+        },
+        {
+            "id": 2,
+            "nama": "Lasida",
+            "avatar": "./assets/img/avatar-3.png",
+            "email": "admin6@gmail.com",
+            "noHp": "628561655028",
+            "notif": 10,
+            "online": true
+        },
+        {
+            "id": 3,
+            "nama": "Andra Adi",
+            "avatar": "./assets/img/avatar-4.png",
+            "email": "admin5@gmail.com",
+            "noHp": "6283812980380",
+            "notif": null,
+            "online": true
+        },
+        {
+            "id": 4,
+            "nama": "Gantira",
+            "avatar": "./assets/img/avatar-5.png",
+            "email": "admin4@gmail.com",
+            "noHp": "089644213248",
+            "notif": null,
+            "online": true
+        },
+        {
+            "id": 5,
+            "nama": "Reza Pahlawan",
+            "avatar": "./assets/img/avatar-6.png",
+            "email": "admin3@gmail.com",
+            "noHp": "089644213249",
+            "notif": 5,
+            "online": false
+        },
+        {
+            "id": 6,
+            "nama": "Raina Khansa",
+            "avatar": "./assets/img/avatar-7.png",
+            "email": "admin2@gmail.com",
+            "noHp": "089644213240",
+            "notif": 2,
+            "online": false
+        }
+    ]
+}
