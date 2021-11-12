@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Chat</title>
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="grid col-12 col-lg-6 px-0 mx-auto">
+            <div class="box-chat">
+                <header class="header">
+                    <div class="header-content">
+                        <p class="header-content_name">Nama Customer Contoh Panjang</p>
+                        <span class="header-content_info">628571621187 - email@gmail.com</span>
+                    </div>
+                    <div class="header-utils">
+                        <button class="btn btn-clear">
+                            <img src="./assets/img/hamburger.svg" alt="" width="30">
+                        </button>
+                    </div>
+                    <div id="sideNav" class="sidenav">
+                        KONTEN KOSONG
+                    </div>
+                </header>
+                <div class="section-content page-blank">
+                    <aside class="section-content_aside"></aside>
+                    <div class="section-content_main">
+                        <h5>KONTEN KOSONG</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script>
+        //Sidebar slide
+        $('.header-utils button').click(function(){
+            $('#sideNav').toggleClass('active-sidebar')
+        })
+    </script>
+</body>
+</html>

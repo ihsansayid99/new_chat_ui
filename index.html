@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanilla Chat</title>
+    <title>Vanilla Chat - Schedule</title>
 
     <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- EmojiArea CSS -->
+    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -23,34 +29,195 @@
             <div class="box-chat">
                 <header class="header">
                     <div class="header-content">
-                        <p class="header-content_name">Nama Customer Contoh Panjang</p>
-                        <span class="header-content_info">628571621187 - email@gmail.com</span>
+                        <div class="header-content-icon">
+                            <img src="./assets/img/user-ic-column.svg" alt="" width="30">
+                        </div>
+                        <div class="header_content_info_parent">
+                            <p class="header-content_name">Nama Customer Contoh Panjang</p>
+                            <span class="header-content_info"><span class="header-content_info_phone"></span></span>
+                        </div>
                     </div>
                     <div class="header-utils">
                         <button class="btn btn-clear">
-                            <img src="./assets/img/hamburger.svg" alt="" width="30">
+                            <img src="./assets/img/user-list-ic.svg" alt="" width="40">
                         </button>
                     </div>
                     <div id="sideNav" class="sidenav">
                         KONTEN KOSONG
                     </div>
                 </header>
-                <div class="section-content page-blank">
-                    <aside class="section-content_aside"></aside>
-                    <div class="section-content_main">
-                        <h5>KONTEN KOSONG</h5>
+                <div class="section-content" id="chats">
+                    <div class="section-content_main-chat" id="main-chat-wrapper">
+                    </div>
+                    <div id="section-upload-wrapper"></div>
+                </div>
+                <div class="section-tools-bottom">
+                    <div class="toolbar-chat-utils">
+                        <div class="col-11 toolbar-chat-utils_button toolbar_cub_left pr-0">
+                            <button class="btn btn-clear">
+                                <img class="cub_img" src="./assets/img/bookmark-ic.svg" alt="" id="template-chat">
+                            </button>
+                            <button class="btn btn-clear">
+                                <img class="cub_img" src="./assets/img/gallery-ic.svg" alt="" id="image-upload-chat">
+                            </button>
+                            <button class="btn btn-clear">
+                                <img class="cub_img" src="./assets/img/emoticon-ic.svg" alt="" id="text-emoji">
+                            </button>
+                            <button class="btn btn-clear">
+                                <img class="cub_img" src="./assets/img/text-ic.svg" alt="" id="text-chat">
+                            </button>
+                            <button class="btn btn-clear float-right mr-3">
+                                <img class="cub_img_user_toggle" src="./assets/img/people-ic.svg" alt="" id="user-swiper-toggle">
+                            </button>
+                            <button class="btn btn-clear float-right">
+                                <img class="cub_img" src="./assets/img/clock-ic.svg" alt="" id="delay-chat">
+                            </button>
+                        </div>
+                        <div class="col-1 px-0 toolbar-chat-utils_button text-right">
+                            <button class="btn btn-clear" id="btn-send-msg">
+                                <img src="./assets/img/send-ic.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="toolbar-chat-utils-details">
+                        <div class="wrapper-toolbar delay-chat">
+                            <h6>Tunda Pengiriman Pesanan</h6>
+                            <div class="row my-2">
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Random</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>5 Menit</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>10 Menit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>20 Menit</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>30 Menit</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>1 Jam</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrapper-toolbar text-emoji"></div>
+                        <div class="wrapper-toolbar image-upload-chat">
+                            <div class="wrapper-fileUpload mx-auto">
+                                <input type="file" accept="image/*" name="fileUpload" id="fileUpload" class="file-upload mt-4 mx-auto" multiple>
+                                <label for="fileUpload"><img src="./assets/img/gallery-icon.png" width="30" alt="">Pilih Gambar</label>
+                            </div>
+                            <div id='pasteImage' contenteditable class="pasteImageWrapper">
+                                <span>Pilih Gambar Atau Paste disini</span>
+                            </div>
+                        </div>
+                        <div class="wrapper-toolbar text-chat">
+                            <div contenteditable="true" class="text-chat-toolbar" id="text-chat-toolbar"></div>
+                            <div class="text-chat-utils-toolbar">
+                                <button class="btn btn-clear mr-1 p-0" id="textBolder">
+                                    <img src="./assets/img/bold-ic.svg" alt="">
+                                </button>
+                                <button class="btn btn-clear mr-1 p-0" id="textItalic">
+                                    <img src="./assets/img/italic-ic.svg" alt="">
+                                </button>
+                                <button class="btn btn-clear mr-1 p-0" id="textUnderline">
+                                    <img src="./assets/img/underline-ic.svg" alt="">
+                                </button>
+                                <button class="btn btn-clear mr-1 p-0" id="textStrike">
+                                    <img src="./assets/img/striketrough-ic.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="wrapper-toolbar template-chat">
+                            <h6>Template Pesan</h6>
+                            <div class="row my-2">
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Pembayaran</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Pengiriman</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Pembelian</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Testimoni</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Promo</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="box-toolbar">
+                                        <p>Informasi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolbar-users">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper" id="swiperChatUsers"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./emoji.json"></script>
+    <script src="./assets/js/moment.min.js"></script>
     <script>
-        //Sidebar slide
-        $('.header-utils button').click(function(){
-            $('#sideNav').toggleClass('active-sidebar')
-        })
-    </script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyASysfbllP1sPPdsRXLP0olj-3Zfj4rF_4",
+            authDomain: "chat-ui-457c6.firebaseapp.com",
+            databaseURL: "https://chat-ui-457c6-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "chat-ui-457c6",
+            storageBucket: "chat-ui-457c6.appspot.com",
+            messagingSenderId: "989042469285",
+            appId: "1:989042469285:web:41e5a173c8a2dfb887204c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        </script>
+    <!-- Initialize Swiper -->
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
