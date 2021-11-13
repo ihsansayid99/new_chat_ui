@@ -62,7 +62,7 @@ button:focus{
 .header-content{
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     color: var(--black);
 }
 .header_content_info_parent{
@@ -74,7 +74,7 @@ button:focus{
 }
 
 .header-utils{
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .sidenav {
@@ -100,7 +100,7 @@ button:focus{
 
 .section-content{
     display: inline-flex;
-    height:calc(100% - 311px);
+    height:calc(100% - 165px);
     overflow-y: auto;
     background-color: var(--lightBlue);
     width: 100%;
@@ -140,7 +140,7 @@ background: #2496FF;
 .header-content_name{
     margin-bottom: 0.1rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .header-content_info{
@@ -151,7 +151,13 @@ background: #2496FF;
 .btn-clear{
     border: none;
     padding: 0;
-    width: 22px;
+    /* width: 22px; */
+}
+
+#btn-send-msg{
+    position: relative;
+    bottom: 0;
+    left: -20px;
 }
 
 #section-upload-wrapper{
@@ -317,7 +323,7 @@ background: #2496FF;
 
 .chat-msg-bubble{
     max-width: 450px;
-    min-width: 350px;
+    min-width: 250px;
     padding: 0.7rem 0.7rem 0.5rem;
     background: var(--white);
     border: 2px solid #F2F2F2;
@@ -341,11 +347,13 @@ background: #2496FF;
 .msg-info-user{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.2rem;
 }
 
 .msg-info-user > div > p {
     font-weight: 600;
     color: #010101;
+    margin: 0;
 }
 
 .badge{
@@ -370,7 +378,7 @@ background: #2496FF;
 .section-tools-bottom{
     position: sticky;
     bottom: 0;
-    height: 231px;
+    height: 100px;
     width: 100%;
     overflow: hidden;
 }
@@ -380,8 +388,9 @@ background: #2496FF;
     align-items: center;
     justify-content: space-between;
     background-color: var(--white);
-    padding: 0.5rem 0.1rem 0.5rem 0.5rem;
+    padding: 0.5rem 0;
     border: 1px solid #F1F1F1;
+    height: 100%;
 }
 
 .toolbar-chat-utils_button{
@@ -392,13 +401,16 @@ background: #2496FF;
     margin-right: 0.5rem;
 }
 
-.toolbar-chat-utils-details{
-    background-color: var(--white);
-    border: 1px solid #F1F1F1;
-    height: 117px;
-}
 .wrapper-toolbar{
-    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+    position: absolute;
+    bottom: calc(0px + 100px);
+    height: 44px;
+    border: 1px solid #D8D8D8;
+    z-index: 100;
+    left: 0;
+    right: 0;
 }
 
 .wrapper-toolbar.template-chat{
@@ -411,6 +423,17 @@ background: #2496FF;
 
 .wrapper-toolbar.delay-chat{
     padding: 0.5rem;
+    display: flex;
+    align-items:  center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.delay-chat-box{
+    display: flex;
+    position: relative;
+    left: 105px;
 }
 
 .wrapper-toolbar.delay-chat h6{
@@ -468,7 +491,7 @@ ul#emojis li.category ul.list li a:hover{
 
 .box-toolbar{
     text-align: center;
-    background-color: #FFF5F5;
+    background-color: var(--white);
     color: var(--black);
     font-weight: 500;
     border-radius: 4px;
@@ -476,6 +499,9 @@ ul#emojis li.category ul.list li a:hover{
     font-size: 12px;
     padding: 0.3rem 0;
     cursor: pointer;
+    width: 90px;
+    margin: 0 0.5rem;
+    border: 1px solid #D8D8D8;
 }
 
 .text-chat{
@@ -484,31 +510,58 @@ ul#emojis li.category ul.list li a:hover{
 
 .text-chat-toolbar{
     width: 100%;
-    height: 80px;
-    max-height: 80px !important;
+    height: 100%;
+    /* max-height: 80px !important; */
     resize: none;
     overflow: hidden;
     font-size: 0.8rem;
-    padding: 0.5rem;
+    padding: 0.5rem 30px 0.5rem 0.5rem;
     font-weight: 500;
     color: #5A5A5A;
-    border-bottom: 1px solid #F1F1F1;
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
 }
+
+.emoticon-wrapper{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+}
+
 .text-chat-toolbar:focus{
     outline: none;
 }
 
 .text-chat-utils-toolbar{
     width: 100%;
-    height: 37px;
-    outline: none;
-    padding: 0.5rem;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
-.active-toolbar-chat{
-    filter: brightness(0%);
+.text-chat-utils-box{
+    width: 40px;
+    height: 100%;
+    border: 1px solid #D8D8D8;
+    border-radius: 0 !important;
+    font-weight: 600;
+}
+
+.text-chat-utils-box.tcub-italic{
+    font-style: italic;
+}
+
+.active-btn-toolbar-chat > svg > circle{
+    fill: #EB2840 !important;
+}
+
+.active-toolbar-chat .svg-path{
+    fill: #EB2840 !important;
+}
+
+.active-toolbar-chat .svg-path-stroke{
+    stroke: #EB2840 !important;
 }
 
 .active-toolbar-chat-parent{
@@ -519,23 +572,31 @@ ul#emojis li.category ul.list li a:hover{
     display: none;
 }
 
-.toolbar-chat-utils-details.active-toolbar-chat-swiper-parent{
+/* .toolbar-chat-utils-details.active-toolbar-chat-swiper-parent{
     height: 186px;
 }
 
 .toolbar-chat-utils-details.active-toolbar-chat-swiper-parent .wrapper-toolbar{
     height: 186px;
-}
+} */
 
-.toolbar-chat-utils-details.active-toolbar-chat-swiper-parent .wrapper-toolbar.text-chat .text-chat-toolbar{
+/* .toolbar-chat-utils-details.active-toolbar-chat-swiper-parent .wrapper-toolbar.text-chat .text-chat-toolbar{
     height: 149px;
     max-height: 149px !important;
+} */
+
+.active-toolbar-users{
+    transform: translateX(0) !important;
 }
 
 .toolbar-users{
     background-color: var(--white);
-    border: 1px solid #F1F1F1;
-    height: 69px;
+    /* border: 1px solid #F1F1F1; */
+    /* height: 69px; */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    transform: translateY(-80px);
+    width: 70%;
 }
 
 .swiper{
@@ -544,8 +605,8 @@ ul#emojis li.category ul.list li a:hover{
 }
 
 .swiper-slide{
-    padding: 1rem;
-    width: 19% !important;
+    /* padding: 0.2rem; */
+    width: 20% !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,16 +617,21 @@ ul#emojis li.category ul.list li a:hover{
     background-color: var(--red);
 }
 
-.swiper-button-next:after, .swiper-button-prev:after{
-    display: none;
+.swiper-pagination{
+    display: none !important;
 }
 
+/* .swiper-button-next:after, .swiper-button-prev:after{
+    display: none;
+} */
+
 .swiper-button-next{
-    background-image: url("../img/arrow-next-ic.svg");
+    /* background-image: url("../img/arrow-next-ic.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 12px;
-    right: 0;
+    right: 0; */
+    display: none;
 }
 
 .active-user::after{

@@ -1,32 +1,32 @@
 $(function() {
     console.log( "ready!" );
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 5,
+        slidesPerView: 4,
         pagination: {
             el: ".swiper-pagination",
-            type: "progressbar",
+            // type: "progressbar",
         },
         navigation: {
             nextEl: ".swiper-button-next",
         },
-        breakpoints: {
-            1024: {
-                slidesPerView: 5,
-                spaceBetween: 1
-            },
-            768: {
-                slidesPerView: 5,
-                spaceBetween: 1
-            },
-            640: {
-                slidesPerView: 5,
-                spaceBetween: 20
-            },
-            320: {
-                slidesPerView: 5,
-                spaceBetween: 1
-            }
-        }
+        // breakpoints: {
+        //     1024: {
+        //         slidesPerView: 5,
+        //         spaceBetween: 1
+        //     },
+        //     768: {
+        //         slidesPerView: 5,
+        //         spaceBetween: 1
+        //     },
+        //     640: {
+        //         slidesPerView: 5,
+        //         spaceBetween: 20
+        //     },
+        //     320: {
+        //         slidesPerView: 5,
+        //         spaceBetween: 1
+        //     }
+        // }
     });
 
     let arrayUsers = [
@@ -86,12 +86,6 @@ $(function() {
         }
     ]
     let chatMessage2 = []
-
-    // var messagesRef = db.ref('chat').limitToLast(10);
-    // messagesRef.on('value', (snapshot) => {
-    //     const data = snapshot.val();
-    //     console.log(data)
-    // });
     
     // Chat JSON to Element
     function populateChatUser(arrayChat){
@@ -177,7 +171,8 @@ $(function() {
 
     //Sidebar slide
     $('.header-utils button').click(function(){
-        $('#sideNav').toggleClass('active-sidebar')
+        $('.toolbar-users').toggleClass('active-toolbar-users')
+        $(this).toggleClass('active-btn-toolbar-chat')
     })
 
     //Clickable user list
@@ -246,17 +241,11 @@ $(function() {
     $('#text-chat').parent().addClass('active-toolbar-chat') //Active default
     $('#user-swiper-toggle').parent().addClass('active-toolbar-chat-parent') //Active default
     //Without user toggle swiper
-    $('.toolbar-chat-utils .toolbar_cub_left button .cub_img').click(function(){
+    $('.cub_img').click(function(){
         $(this).parent().addClass('active-toolbar-chat').siblings().removeClass('active-toolbar-chat')
+        $(this).parent().addClass('active-toolbar-chat').parent().siblings('.toolbar_cub_left').children().removeClass('active-toolbar-chat')
         var id = $(this).attr("id");
         $(`.${id}`).show().siblings('.wrapper-toolbar').hide()
-    })
-    //with user toggle swiper
-    $('.toolbar-chat-utils .toolbar_cub_left button .cub_img_user_toggle').click(function(){
-        $(this).parent().toggleClass('active-toolbar-chat-parent')
-        $('.toolbar-users').toggleClass('active-toolbar-chat-swiper')
-        $('.toolbar-chat-utils-details').toggleClass('active-toolbar-chat-swiper-parent')
-        heightUploadWrapper()
     })
 
     // Bolder, Underline, italic tools text chat
