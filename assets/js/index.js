@@ -170,9 +170,9 @@ $(function() {
 
 
     //Sidebar slide
-    $('.header-utils button').click(function(){
+    $('.header-utils button .btn-user-svg').click(function(){
         $('.toolbar-users').toggleClass('active-toolbar-users')
-        $(this).toggleClass('active-btn-toolbar-chat')
+        $(this).parent().toggleClass('active-btn-toolbar-chat')
     })
 
     //Clickable user list
@@ -232,20 +232,22 @@ $(function() {
     }
 
 
-    // Click active toolbar chat 
-    let delayChat = $('.delay-chat').hide()
-    let emojiChat = $('.text-emoji').hide()
-    let templateChat = $('.template-chat').hide()
-    let imageUploadChat = $('.image-upload-chat').hide()
-    let textChat = $('.text-chat').show()
-    $('#text-chat').parent().addClass('active-toolbar-chat') //Active default
-    $('#user-swiper-toggle').parent().addClass('active-toolbar-chat-parent') //Active default
     //Without user toggle swiper
     $('.cub_img').click(function(){
-        $(this).parent().addClass('active-toolbar-chat').siblings().removeClass('active-toolbar-chat')
-        $(this).parent().addClass('active-toolbar-chat').parent().siblings('.toolbar_cub_left').children().removeClass('active-toolbar-chat')
-        var id = $(this).attr("id");
-        $(`.${id}`).show().siblings('.wrapper-toolbar').hide()
+        var checkHasClass = $(this).parent().hasClass('active-toolbar-chat');
+        if(checkHasClass){
+            $(this).parent().removeClass('active-toolbar-chat')
+            var id = $(this).attr("id");
+            $(`.${id}`).removeClass('wrapper-toolbar-active')
+            $('#section-upload-wrapper').css("bottom", "calc(0px + 100px)")
+        }else{
+            $(this).parent().addClass('active-toolbar-chat').siblings().removeClass('active-toolbar-chat')
+            $(this).parent().addClass('active-toolbar-chat').parent().siblings('.toolbar_cub_left').children().removeClass('active-toolbar-chat')
+            var id = $(this).attr("id");
+            $(`.${id}`).addClass('wrapper-toolbar-active').siblings('.wrapper-toolbar').removeClass('wrapper-toolbar-active')
+            $('#section-upload-wrapper').css("bottom", "calc(0px + 140px)")
+        }
+        
     })
 
     // Bolder, Underline, italic tools text chat
@@ -390,6 +392,8 @@ $(function() {
                 $this.remove()
             })
         }
+        $('.btn.btn-clear').removeClass('active-toolbar-chat')
+        $('.wrapper-toolbar').removeClass('wrapper-toolbar-active')
     })
 
     // Upload IMG
@@ -403,7 +407,7 @@ $(function() {
     $("html").on("dragover", function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $('#pasteImage').text('Drag Disini...')
+        $('#pasteImage span').text('Drag Disini...')
     });
 
     $("html").on("drop", function(e) { e.preventDefault(); e.stopPropagation(); });
@@ -412,14 +416,14 @@ $(function() {
     $('.pasteImageWrapper').on('dragenter', function (e) {
         e.stopPropagation();
         e.preventDefault();
-        $('#pasteImage').text('DROP')
+        $('#pasteImage span').text('DROP')
     });
 
     // Drag over
     $('.pasteImageWrapper').on('dragover', function (e) {
         e.stopPropagation();
         e.preventDefault();
-        $('#pasteImage').text('DROP')
+        $('#pasteImage span').text('DROP')
     });
 
     // Drop
@@ -427,7 +431,7 @@ $(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        $('#pasteImage').text('Upload')
+        $('#pasteImage span').text('Upload')
 
         var file = e.originalEvent.dataTransfer.files;
 
@@ -436,7 +440,7 @@ $(function() {
 
     $("#pasteImage").click(function(){
         $("#fileUpload").click();
-        $('#pasteImage').text('Upload gambar atau paste disini')
+        $('#pasteImage span').text('Upload gambar atau paste disini')
     });
 
     document.onpaste = async (e) => {
@@ -508,9 +512,10 @@ $(function() {
     function uploadData(data){
         for (let i = 0; i < data.length; i++) {
             const element = data[i];
+            // <div class="file-upload-preview file-upload-success">
             $('#section-upload-wrapper').append(`
                 <div class="section-upload-img">
-                    <div class="file-upload-preview file-upload-successs">
+                    <div class="file-upload-preview">
                         <div class="file-upload-info">
                             <input type="hidden">
                             <p class="text-upload-info d-none">${element.name}</p>
@@ -558,14 +563,14 @@ $(function() {
                 "state_changed",
                 function progress(snapshot){
                     var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    $('#pasteImage').text(`loading ${percentage}%`)
+                    $('#pasteImage span').text(`loading ${percentage}%`)
                 },
                 function error(){
                     console.log('error upload')
                 },
                 function complete(){
-                    uploadSuccess.addClass('file-upload-success')
-                    $('#pasteImage').text('Uploaded!')
+                    // uploadSuccess.addClass('file-upload-success')
+                    $('#pasteImage span').text('Uploaded!')
                     upload.snapshot.ref.getDownloadURL().then(url => {
                         uploadInputVal.val(url)
                     })

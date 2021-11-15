@@ -45,6 +45,11 @@
                     </div>
                     <div class="header-utils">
                         <button class="btn btn-clear">
+                            <svg class="cub_img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="template-chat">
+                                <path class="svg-path-stroke" d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="#CFCFCF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-clear">
                             <svg width="40" class="btn-user-svg" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="20" cy="20" r="20" fill="#CFCFCF"/>
                                 <path d="M23.3182 19.0909C22.4421 19.0909 21.5949 18.6997 20.9318 17.9898C20.2871 17.2973 19.8933 16.3739 19.8239 15.3903C19.7497 14.3412 20.0698 13.3764 20.7247 12.6733C21.3797 11.9702 22.2955 11.5909 23.3182 11.5909C24.3337 11.5909 25.252 11.977 25.9048 12.6784C26.5641 13.3867 26.885 14.3497 26.8108 15.3899C26.7396 16.3747 26.3463 17.2977 25.7029 17.9893C25.0415 18.6997 24.1948 19.0909 23.3182 19.0909ZM28.936 26.5909H17.7009C17.5202 26.5919 17.3418 26.5514 17.1793 26.4726C17.0167 26.3937 16.8744 26.2787 16.7634 26.1362C16.6455 25.9818 16.5642 25.8027 16.5254 25.6124C16.4865 25.4221 16.4913 25.2254 16.5392 25.0372C16.898 23.5965 17.787 22.4016 19.1097 21.5821C20.2837 20.8551 21.7781 20.4545 23.3182 20.4545C24.8885 20.4545 26.3438 20.8381 27.5246 21.5646C28.8503 22.3798 29.7405 23.5815 30.0976 25.0398C30.145 25.2281 30.1492 25.4248 30.1099 25.615C30.0707 25.8052 29.989 25.9841 29.8709 26.1384C29.7599 26.2801 29.618 26.3946 29.4559 26.4731C29.2939 26.5515 29.116 26.5918 28.936 26.5909ZM15.2642 19.2614C13.7646 19.2614 12.4462 17.867 12.3239 16.1536C12.2634 15.2757 12.5369 14.4639 13.0909 13.8686C13.6389 13.2793 14.4119 12.9545 15.2642 12.9545C16.1165 12.9545 16.8835 13.281 17.4345 13.8737C17.9928 14.4737 18.2655 15.2838 18.2016 16.1544C18.0793 17.8675 16.7612 19.2614 15.2642 19.2614ZM18.0622 20.6016C17.3127 20.2351 16.3398 20.0518 15.2646 20.0518C14.0093 20.0518 12.7901 20.3791 11.8313 20.9732C10.7442 21.6477 10.0129 22.63 9.71763 23.8159C9.67442 23.9865 9.67033 24.1646 9.70567 24.337C9.74102 24.5094 9.81489 24.6716 9.92175 24.8114C10.0231 24.9415 10.1531 25.0467 10.3015 25.1188C10.4499 25.1909 10.6129 25.228 10.7779 25.2273H15.508C15.5878 25.2273 15.6651 25.1992 15.7264 25.1481C15.7877 25.0969 15.8291 25.0259 15.8433 24.9473C15.848 24.9205 15.854 24.8936 15.8608 24.8672C16.2222 23.4158 17.0689 22.1894 18.32 21.2953C18.3661 21.2621 18.4031 21.218 18.4277 21.1669C18.4524 21.1158 18.4639 21.0594 18.4612 21.0027C18.4586 20.9461 18.4418 20.891 18.4125 20.8424C18.3831 20.7939 18.3421 20.7534 18.2932 20.7247C18.2263 20.6855 18.1496 20.6442 18.0622 20.6016Z" fill="white"/>
@@ -58,92 +63,80 @@
                 <div class="section-content" id="chats">
                     <div class="section-content_main-chat" id="main-chat-wrapper">
                     </div>
-                    <div id="section-upload-wrapper"></div>
-                    
-                    <div class="">
-                        <div class="wrapper-toolbar text-emoji"></div>
-                        <div class="wrapper-toolbar image-upload-chat">
-                            <div class="wrapper-fileUpload mx-auto">
-                                <input type="file" accept="image/*" name="fileUpload" id="fileUpload" class="file-upload mt-4 mx-auto" multiple>
-                                <label for="fileUpload"><img src="./assets/img/gallery-icon.png" width="30" alt="">Pilih Gambar</label>
+                </div>
+                <div id="section-upload-wrapper"></div>
+                
+                <div class="">
+                    <div class="wrapper-toolbar text-emoji"></div>
+                    <div class="wrapper-toolbar image-upload-chat">
+                        <div class="wrapper-fileUpload mx-auto">
+                            <input type="file" accept="image/*" name="fileUpload" id="fileUpload" class="file-upload mt-4 mx-auto" multiple>
+                            <label for="fileUpload"><img src="./assets/img/gallery-icon.png" width="30" alt="">Pilih Gambar</label>
+                        </div>
+                        <div id='pasteImage' contenteditable class="pasteImageWrapper">
+                            <span>Pilih Gambar</span>
+                        </div>
+                    </div>
+                    <div class="wrapper-toolbar text-chat">
+                        <div class="text-chat-utils-toolbar">
+                            <button class="btn btn-clear text-chat-utils-box" id="textBolder">
+                                B
+                            </button>
+                            <button class="btn btn-clear text-chat-utils-box tcub-italic" id="textItalic">
+                                I
+                            </button>
+                            <button class="btn btn-clear text-chat-utils-box tcub-italic" id="textStrike">
+                                S
+                            </button>
+                        </div>
+                    </div>
+                    <div class="wrapper-toolbar template-chat">
+                        <div class="position-absolute">
+                            <h6>Template</h6>
+                        </div>
+                        <div class="delay-chat-box">
+                            <div class="box-toolbar">
+                                <p>Rekening</p>
                             </div>
-                            <div id='pasteImage' contenteditable class="pasteImageWrapper">
-                                <span>Pilih Gambar Atau Paste disini</span>
+                            <div class="box-toolbar">
+                                <p>Pembayaran</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>Sapa</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>Aftersales</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>Promo</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>Informasi</p>
                             </div>
                         </div>
-                        <div class="wrapper-toolbar text-chat">
-                            <div class="text-chat-utils-toolbar">
-                                <button class="btn btn-clear text-chat-utils-box" id="textBolder">
-                                    B
-                                </button>
-                                <button class="btn btn-clear text-chat-utils-box tcub-italic" id="textItalic">
-                                    I
-                                </button>
-                                <button class="btn btn-clear text-chat-utils-box tcub-italic" id="textStrike">
-                                    S
-                                </button>
-                            </div>
+                    </div>
+                    <div class="wrapper-toolbar delay-chat">
+                        <div class="position-absolute">
+                            <h6>Tunda Kirim</h6>
                         </div>
-                        <div class="wrapper-toolbar template-chat">
-                            <h6>Template Pesan</h6>
-                            <div class="row my-2">
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Pembayaran</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Pengiriman</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Pembelian</p>
-                                    </div>
-                                </div>
+                        <div class="delay-chat-box">
+                            <div class="box-toolbar">
+                                <p>5 Menit</p>
                             </div>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Testimoni</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Promo</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="box-toolbar">
-                                        <p>Informasi</p>
-                                    </div>
-                                </div>
+                            <div class="box-toolbar">
+                                <p>10 Menit</p>
                             </div>
-                        </div>
-                        <div class="wrapper-toolbar delay-chat">
-                            <div class="position-absolute">
-                                <h6>Tunda Kirim</h6>
+                            <div class="box-toolbar">
+                                <p>15 Menit</p>
                             </div>
-                            <div class="delay-chat-box">
-                                <div class="box-toolbar">
-                                    <p>5 Menit</p>
-                                </div>
-                                <div class="box-toolbar">
-                                    <p>10 Menit</p>
-                                </div>
-                                <div class="box-toolbar">
-                                    <p>15 Menit</p>
-                                </div>
-                                <div class="box-toolbar">
-                                    <p>20 Menit</p>
-                                </div>
-                                <div class="box-toolbar">
-                                    <p>30 Menit</p>
-                                </div>
-                                <div class="box-toolbar">
-                                    <p>1 Jam</p>
-                                </div>
+                            <div class="box-toolbar">
+                                <p>20 Menit</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>30 Menit</p>
+                            </div>
+                            <div class="box-toolbar">
+                                <p>1 Jam</p>
                             </div>
                         </div>
                     </div>
@@ -169,7 +162,7 @@
                         <div class="toolbar_cub_left col-8 px-0 h-100">
                             <div contenteditable="true" class="text-chat-toolbar" id="text-chat-toolbar"></div>
                             <div class="emoticon-wrapper">
-                                <svg class="cub_img" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="cub_img" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="text-emoji">
                                     <g clip-path="url(#clip0_369_351)">
                                         <path class="svg-path" d="M15.9008 4.50328C15.0541 3.65524 14.0468 2.98148 12.9367 2.5207C11.8266 2.05992 10.6356 1.8212 9.43225 1.81826C8.22887 1.81533 7.03675 2.04823 5.9244 2.50358C4.81204 2.95894 3.80137 3.62777 2.95044 4.47167C2.09952 5.31556 1.42511 6.31788 0.965957 7.42104C0.506808 8.5242 0.271968 9.70647 0.27493 10.8999C0.277892 12.0934 0.518597 13.2745 0.983216 14.3754C1.44784 15.4763 2.12721 16.4753 2.98232 17.315C3.82905 18.1631 4.83639 18.8368 5.94647 19.2976C7.05655 19.7584 8.24749 19.9971 9.45088 20C10.6543 20.003 11.8464 19.7701 12.9587 19.3147C14.0711 18.8594 15.0818 18.1905 15.9327 17.3466C16.7836 16.5027 17.458 15.5004 17.9172 14.3973C18.3763 13.2941 18.6112 12.1118 18.6082 10.9184C18.6052 9.72494 18.3645 8.54384 17.8999 7.44293C17.4353 6.34202 16.7559 5.34301 15.9008 4.50328ZM12.3778 8.96785C12.5714 8.96785 12.7606 9.02478 12.9215 9.13143C13.0825 9.23809 13.2079 9.38969 13.282 9.56705C13.3561 9.74441 13.3755 9.93958 13.3377 10.1279C13.2999 10.3162 13.2067 10.4891 13.0698 10.6249C12.933 10.7606 12.7586 10.853 12.5687 10.8905C12.3789 10.9279 12.1821 10.9087 12.0032 10.8353C11.8244 10.7618 11.6715 10.6374 11.564 10.4778C11.4564 10.3181 11.399 10.1305 11.399 9.9385C11.3987 9.81094 11.4238 9.68458 11.4729 9.56667C11.522 9.44876 11.594 9.34163 11.685 9.25143C11.7759 9.16124 11.884 9.08975 12.0028 9.04109C12.1217 8.99242 12.2492 8.96753 12.3778 8.96785ZM6.50536 8.96785C6.69894 8.96785 6.88816 9.02478 7.04912 9.13143C7.21007 9.23809 7.33552 9.38969 7.40959 9.56705C7.48367 9.74441 7.50305 9.93958 7.46529 10.1279C7.42752 10.3162 7.33431 10.4891 7.19743 10.6249C7.06055 10.7606 6.88616 10.853 6.6963 10.8905C6.50645 10.9279 6.30965 10.9087 6.13081 10.8353C5.95197 10.7618 5.79912 10.6374 5.69157 10.4778C5.58403 10.3181 5.52662 10.1305 5.52662 9.9385C5.5263 9.81094 5.5514 9.68458 5.60047 9.56667C5.64954 9.44876 5.72162 9.34163 5.81257 9.25143C5.90352 9.16124 6.01154 9.08975 6.13043 9.04109C6.24932 8.99242 6.37674 8.96753 6.50536 8.96785ZM9.44361 16.0859C7.59135 16.0859 6.02823 14.8933 5.54008 13.2618C5.49767 13.1194 5.44506 12.8504 5.44506 12.8504H13.4381C13.4381 12.8504 13.3847 13.121 13.3431 13.2618C12.8627 14.8941 11.2959 16.0859 9.44361 16.0859Z" fill="#CFCFCF"/>
                                     </g>

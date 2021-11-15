@@ -54,7 +54,7 @@ button:focus{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     width: 100%;
     z-index: 10;
 }
@@ -100,11 +100,12 @@ button:focus{
 
 .section-content{
     display: inline-flex;
-    height:calc(100% - 165px);
+    height:calc(100% - 140px);
     overflow-y: auto;
     background-color: var(--lightBlue);
     width: 100%;
     overflow-x: hidden;
+    margin-top: 50px;
 }
 .section-content.page-blank{
     height:calc(100% - 80px);
@@ -168,7 +169,7 @@ background: #2496FF;
 
 .section-content_main-chat{
     width: 100%;
-    padding: 1rem 1rem 0.1rem;
+    padding: 1rem 1rem 2rem;
     height: fit-content;
 }
 
@@ -376,7 +377,7 @@ background: #2496FF;
 }
 
 .section-tools-bottom{
-    position: sticky;
+    position: fixed;
     bottom: 0;
     height: 100px;
     width: 100%;
@@ -401,6 +402,11 @@ background: #2496FF;
     margin-right: 0.5rem;
 }
 
+.wrapper-toolbar-active{
+    transform: translateX(0) !important;
+    z-index: 100 !important;
+}
+
 .wrapper-toolbar{
     width: 100%;
     background-color: var(--white);
@@ -408,23 +414,30 @@ background: #2496FF;
     bottom: calc(0px + 100px);
     height: 44px;
     border: 1px solid #D8D8D8;
-    z-index: 100;
     left: 0;
     right: 0;
+    transform: translateX(-400px);
+    z-index: -10;
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .wrapper-toolbar.template-chat{
     padding: 0.5rem;
+    display: flex;
+    align-items:  flex-end;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .wrapper-toolbar.template-chat h6{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .wrapper-toolbar.delay-chat{
     padding: 0.5rem;
     display: flex;
-    align-items:  center;
+    align-items:  flex-end;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
@@ -437,11 +450,11 @@ background: #2496FF;
 }
 
 .wrapper-toolbar.delay-chat h6{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .wrapper-toolbar.text-emoji{
-    height: 100%;
+    height: 140px;
     padding: 0;
 }
 
@@ -466,19 +479,19 @@ ul#emojis li.category h2.title{
 }
 
 ul#emojis li.category ul.list{
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 ul#emojis li.category ul.list li{
     display: inline-block;
     font-size: 24px;
-    padding: 4px;
+    padding: 0;
 }
 
 ul#emojis li.category ul.list li a{
     display: block;
-    width: 30px;
-    margin: 6px;
+    width: 37px;
+    margin: 3px;
     overflow: hidden;
     cursor: pointer;
     text-decoration: none;
@@ -513,7 +526,7 @@ ul#emojis li.category ul.list li a:hover{
     height: 100%;
     /* max-height: 80px !important; */
     resize: none;
-    overflow: hidden;
+    overflow: auto;
     font-size: 0.8rem;
     padding: 0.5rem 30px 0.5rem 0.5rem;
     font-weight: 500;
@@ -648,7 +661,7 @@ ul#emojis li.category ul.list li a:hover{
 }
 
 .section-upload-img{
-    margin-top: 2px;
+    margin: 0.5rem;
     transition: ease-in 1s;
     position: relative;
 }
@@ -662,6 +675,7 @@ ul#emojis li.category ul.list li a:hover{
     align-items: center;
     color: var(--black);
     background: var(--white);
+    border-radius: 4px;
 }
 
 .file-upload-success{
@@ -788,14 +802,23 @@ ul#emojis li.category ul.list li a:hover{
 .pasteImageWrapper{
     border: 1px solid var(--gray);
     height: inherit;
-    text-align: center;
     cursor: pointer;
+    padding: 0.4rem;
 }
 
 .pasteImageWrapper span{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 500;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 12px;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    width: 90px;
+    margin: 0 0.5rem;
+    border: 1px solid #D8D8D8;;
 }
 
 @keyframes message {
