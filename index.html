@@ -21,12 +21,20 @@
     <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" media="(max-width: 480px)">
+    <link rel="stylesheet" href="./assets/css/style-desktop.css" media="(min-width: 1024px)">
 </head>
 <body>
-    <div class="container">
-        <div class="grid col-12 col-lg-6 px-0 mx-auto">
-            <div class="box-chat">
+    <div class="col-12 px-0 mx-auto vh-100 overflow-hidden">
+        <div class="header-desktop">
+            <h3>Web Chat</h3>
+        </div>
+        <div class="d-flex">
+            <div class="column-blank col-3"></div>
+            <div class="column-profile col-3">
+                <h3>Profile</h3>
+            </div>
+            <div class="box-chat col-12 col-lg-5 px-0">
                 <header class="header">
                     <div class="toolbar-users">
                         <!-- Swiper  -->
@@ -44,7 +52,7 @@
                         </div>
                     </div>
                     <div class="header-utils">
-                        <button class="btn btn-clear">
+                        <button class="btn btn-clear mr-3">
                             <svg class="cub_img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="template-chat">
                                 <path class="svg-path-stroke" d="M19 21L12 16L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z" stroke="#CFCFCF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -65,6 +73,7 @@
                     </div>
                 </div>
                 <div id="section-upload-wrapper"></div>
+                <div id="section-reply-chat-wrapper"></div>
                 
                 <div class="">
                     <div class="wrapper-toolbar text-emoji"></div>
@@ -94,23 +103,23 @@
                         <div class="position-absolute">
                             <h6>Template</h6>
                         </div>
-                        <div class="delay-chat-box">
-                            <div class="box-toolbar">
+                        <div class="delay-chat-box template-chat-box">
+                            <div class="box-toolbar" id="tcb-1">
                                 <p>Rekening</p>
                             </div>
-                            <div class="box-toolbar">
+                            <div class="box-toolbar" id="tcb-2">
                                 <p>Pembayaran</p>
                             </div>
-                            <div class="box-toolbar">
+                            <div class="box-toolbar" id="tcb-3">
                                 <p>Sapa</p>
                             </div>
-                            <div class="box-toolbar">
+                            <div class="box-toolbar" id="tcb-4">
                                 <p>Aftersales</p>
                             </div>
-                            <div class="box-toolbar">
+                            <div class="box-toolbar" id="tcb-5">
                                 <p>Promo</p>
                             </div>
-                            <div class="box-toolbar">
+                            <div class="box-toolbar" id="tcb-6">
                                 <p>Informasi</p>
                             </div>
                         </div>
@@ -203,6 +212,11 @@
                             </button>
                         </div> -->
                     </div>
+                </div>
+            </div>
+            <div class="users-lists-desktop col-1 px-0">
+                <div class="swiper mySwiperUserDesktop">
+                    <div class="swiper-wrapper" id="swiperChatUsers-desktop"></div>
                 </div>
             </div>
         </div>

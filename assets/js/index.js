@@ -1,33 +1,30 @@
 $(function() {
     console.log( "ready!" );
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        pagination: {
-            el: ".swiper-pagination",
-            // type: "progressbar",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-        },
-        // breakpoints: {
-        //     1024: {
-        //         slidesPerView: 5,
-        //         spaceBetween: 1
-        //     },
-        //     768: {
-        //         slidesPerView: 5,
-        //         spaceBetween: 1
-        //     },
-        //     640: {
-        //         slidesPerView: 5,
-        //         spaceBetween: 20
-        //     },
-        //     320: {
-        //         slidesPerView: 5,
-        //         spaceBetween: 1
-        //     }
-        // }
-    });
+    var width = $(window).width(); 
+    if(width <= 480) {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            pagination: {
+                el: ".swiper-pagination",
+                // type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+            },
+        });
+    }else{
+        var swiper = new Swiper(".mySwiperUserDesktop", {
+            direction: 'vertical',
+            slidesPerView: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                // type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+            },
+        });
+    }
 
     let arrayUsers = [
         {
@@ -86,6 +83,14 @@ $(function() {
         }
     ]
     let chatMessage2 = []
+    let tundaPengiriman = [
+        "Ini Template Rekening",
+        "Ini Template Pembayaran",
+        "Ini Template SAPA",
+        "Ini Template Aftersales",
+        "Ini Template Promo",
+        "Ini Template Informasi"
+    ]
     
     // Chat JSON to Element
     function populateChatUser(arrayChat){
@@ -162,7 +167,7 @@ $(function() {
                 <div class="c-avatar">
                     <img src="${item.avatar}" alt="" class="avatar" id="${item.id}">
                     
-                    ${item.notif === null ? `` : `<div class="avatar-notif">${item.notif}</div>`}
+                    ${item.notif === null ? "" : `<div class="avatar-notif">${item.notif}</div>`}
                 </div>
             </div>
         `)
@@ -177,7 +182,7 @@ $(function() {
 
     //Clickable user list
     let numClicks = 0;
-    $("#swiperChatUsers div img").click(function(){
+    $(".swiper-wrapper div img").click(function(){
         numClicks++;
         if (numClicks === 1) {
             singleClickTimer = setTimeout(() => {
@@ -239,13 +244,21 @@ $(function() {
             $(this).parent().removeClass('active-toolbar-chat')
             var id = $(this).attr("id");
             $(`.${id}`).removeClass('wrapper-toolbar-active')
-            $('#section-upload-wrapper').css("bottom", "calc(0px + 100px)")
+            if(width <= 480){
+                $('#section-upload-wrapper').css("bottom", "calc(0px + 100px)")
+            }else{
+                $('#section-upload-wrapper').css("bottom", "calc(76px + 100px)")
+            }
         }else{
             $(this).parent().addClass('active-toolbar-chat').siblings().removeClass('active-toolbar-chat')
             $(this).parent().addClass('active-toolbar-chat').parent().siblings('.toolbar_cub_left').children().removeClass('active-toolbar-chat')
             var id = $(this).attr("id");
             $(`.${id}`).addClass('wrapper-toolbar-active').siblings('.wrapper-toolbar').removeClass('wrapper-toolbar-active')
-            $('#section-upload-wrapper').css("bottom", "calc(0px + 140px)")
+            if(width <= 480){
+                $('#section-upload-wrapper').css("bottom", "calc(0px + 140px)")
+            }else{
+                $('#section-upload-wrapper').css("bottom", "calc(76px + 140px)")
+            }
         }
         
     })
@@ -298,12 +311,13 @@ $(function() {
                         </div>
                         <div class="chat-msg-bubble">
                             <div class="msg-info-user">
-                                <div><p>Ihsan Sayid</p></div>
+                                <div><p>${elementx.from.nama}</p></div>
                                 <div>
                                     <span class="badge ${elementx.from_me === true ? "badge-danger" : "badge-success"}">${elementx.from_me === true ? "Moderator" : "Customer"}</span>
                                 </div>
                             </div>
                             <div class="msg-text">
+                                ${elementx.reply_for > 0 ? `<div class='d-block reply-chat-box'><div class='msg-info-user'><div><p>${elementx.reply_chat.name}</p></div></div><div class='msg-text'>${elementx.reply_chat.message}</div></div>`: " "}
                                 ${elementx.media_url === null ? urlify(elementx.message) : elementx.media_url} 
                             </div>
                             <div class="chat-msg-info">
@@ -314,7 +328,7 @@ $(function() {
                         </div>
                         <div class="chat-msg-utils" id="chat-utils-${elementx.id}">
                             <div class="chat-msg-utils_item">
-                                <div class="chat-msg-utils_item-info">
+                                <div class="chat-msg-utils_item-info reply-item">
                                     <img src="./assets/img/reply-ic.svg" />
                                     <span>Reply</span>
                                 </div>
@@ -348,10 +362,32 @@ $(function() {
 
         //Click Chat Utils Message Rply / Delete
         $('.chat-msg-utils_button button').click(function(){
+            var idChat = $(this).closest('.chat-msg-utils_button').parent('.chat-msg-utils').attr('id')
+            var idChatSingle = idChat.split("-")[2]
+            var replyText = $(`#${idChat}`).siblings('.chat-msg-bubble').children('.msg-text').text()
             $(this).closest('.chat-msg-utils_button').parent().children('.chat-msg-utils_item').toggleClass('active-chat-utils')
+            $(`#${idChat} div .reply-item`).click(function(){
+                $('#section-reply-chat-wrapper').children().remove()
+                $('#section-reply-chat-wrapper').append(`
+                    <div class="section-upload-img rep-chat">
+                        <div class="file-upload-preview">
+                            <div class="file-upload-info">
+                                <input type="hidden" value="${idChatSingle}">
+                                <p>Ihsan</p>
+                                <span>${replyText}</span>
+                            </div>
+                            <div class="file-upload-close-btn">
+                                <button class="btn btn-clear">
+                                    <img src="./assets/img/upload-close-ic.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `)
+                $('.chat-msg-utils_item').hide()
+            })
         })
     }
-    
 
     function clearTextInput(){
         $('.text-chat-toolbar').text("")
@@ -370,27 +406,34 @@ $(function() {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 
-    function getDataImage(data){
-        console.log(data)
-        return data
-    }
+    // function getDataImage(data){
+    //     console.log(data)
+    //     return data
+    // }
 
     //Send Message to chat
     $('#btn-send-msg').click(function(){
         let msg = $('.text-chat-toolbar').html()
-        let sectionUpload = $('.section-upload-img')
+        let sectionUpload = $('.section-upload-img.up-img')
+        let repMsg = $('#section-reply-chat-wrapper').children()
         var idActive = $('.swiper-slide.swiper-slide-active.active-user').find('img').attr("id")
-        if(msg.length > 0){
-            newChat(msg, null, idActive)
+        if(msg.length > 0 && repMsg.length === 0){
+            newChat(msg, null, 0)
         }
         if(sectionUpload.length > 0){
             sectionUpload.each(function(){
                 var $this = $(this)
                 var msgImg = $this.find('.file-upload-info input').val()
                 var imgToChat = `<img src="${msgImg}" style="max-width: 200px;">`
-                newChat(null, imgToChat, idActive)
+                newChat(null, imgToChat, 0)
                 $this.remove()
             })
+        }
+        
+        if(repMsg.length > 0){
+            var idReply = $('.section-upload-img.rep-chat').find('.file-upload-info input').val()
+            newChat(msg, null, idReply)
+            $('.section-upload-img.rep-chat').remove()
         }
         $('.btn.btn-clear').removeClass('active-toolbar-chat')
         $('.wrapper-toolbar').removeClass('wrapper-toolbar-active')
@@ -454,7 +497,7 @@ $(function() {
         }
     }
 
-    function newChat(data, media, id){
+    function newChat(data, media, reply){
         var date = new Date();
         var dateString =
             date.getUTCFullYear() + "-" +
@@ -463,21 +506,49 @@ $(function() {
             ("0" + date.getHours()).slice(-2) + ":" +
             ("0" + date.getMinutes()).slice(-2) + ":" +
             ("0" + date.getSeconds()).slice(-2);
-        chatMessage2.push({
-            "to": "628117405275",
-            "from":"628117405275",
-            "from_group":false,
-            "from_me":true,
-            "message": data,
-            "media_url": media === null ? null : media,
-            "type":"text",
-            "status":"DELIVERED",
-            "created_at": dateString,
-            "updated_at": dateString,
-            "reply_for":0,
-            "failed_reason":null,
-            "timestamp":1620185543
-        }) 
+        var idChat = chatMessage2.length + 1;
+        if(reply > 0){
+            var quotedTargetName = chatMessage2.find(x => x.id === parseInt(reply)).from.nama
+            var quotedTargetMsg = chatMessage2.find(x => x.id === parseInt(reply)).message
+            chatMessage2.push({
+                "id": idChat,
+                "to": "628117405275",
+                "from":"628117405275",
+                "from_group":false,
+                "from_me":true,
+                "message": data,
+                "media_url": media === null ? null : media,
+                "type":"text",
+                "status":"DELIVERED",
+                "created_at": dateString,
+                "updated_at": dateString,
+                "reply_for": reply,
+                "failed_reason":null,
+                "timestamp":1620185543,
+                "reply_chat": {
+                    "id": reply,
+                    "name": quotedTargetName,
+                    "message": quotedTargetMsg
+                }
+            }) 
+        } else {
+            chatMessage2.push({
+                "id": idChat,
+                "to": "628117405275",
+                "from":"628117405275",
+                "from_group":false,
+                "from_me":true,
+                "message": data,
+                "media_url": media === null ? null : media,
+                "type":"text",
+                "status":"DELIVERED",
+                "created_at": dateString,
+                "updated_at": dateString,
+                "reply_for": reply,
+                "failed_reason":null,
+                "timestamp":1620185543,
+            }) 
+        }
         // firebase.database().ref("messages").push().set({
         //     "to": "628117405275",
         //     "from": "628117405275",
@@ -514,7 +585,7 @@ $(function() {
             const element = data[i];
             // <div class="file-upload-preview file-upload-success">
             $('#section-upload-wrapper').append(`
-                <div class="section-upload-img">
+                <div class="section-upload-img up-img">
                     <div class="file-upload-preview">
                         <div class="file-upload-info">
                             <input type="hidden">
@@ -639,6 +710,13 @@ $(function() {
             'line-height': heightUploadWrapper  + 'px'
         })
     }
+
+    //Template chat 
+    $('.template-chat-box .box-toolbar').click(function(){
+        var idBoxTemplate = $(this).attr("id").split("-")[1]
+        $('.text-chat-toolbar').text(tundaPengiriman[idBoxTemplate-1])
+    })
+
     window.onload = function(){
         $.getJSON( "./chat.json", function( data ) {
             var limit = 4
