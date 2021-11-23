@@ -163,11 +163,14 @@ background: #2496FF;
 #btn-send-msg{
     position: relative;
     bottom: 0;
+    left: -20px;
+    cursor: default;
 }
 
 #btn-send-msg > img{
     width: 80px;
     float: right;
+    cursor: pointer;
 }
 
 #section-upload-wrapper{
@@ -373,7 +376,7 @@ background: #2496FF;
 .msg-text{
     color: #696969;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 13px;
 }
 
 .msg-info-user{
@@ -386,11 +389,13 @@ background: #2496FF;
     font-weight: 600;
     color: #010101;
     margin: 0;
+    font-size: 12px;
 }
 
 .badge{
     display: unset;
     padding: 0.25em 0.6em;
+    font-size: 10px;
 }
 
 .badge-danger{
@@ -426,8 +431,8 @@ background: #2496FF;
 
 .cub_img{
     cursor: pointer;
-    height: 35px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
 }
 
 .toolbar-chat-utils{
@@ -475,10 +480,11 @@ background: #2496FF;
     overflow-x: auto;
     scrollbar-width: thin;
     overflow-y: hidden;
+    height: 70px !important;
 }
 
 .wrapper-toolbar.template-chat h6{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .wrapper-toolbar.delay-chat{
@@ -489,11 +495,12 @@ background: #2496FF;
     overflow-x: auto;
     scrollbar-width: thin;
     overflow-y: hidden;
+    height: 70px !important;
 }
 
 .text-utils_align{
-    left: 15px;
-    top: 18px;
+    left: 20px !important;
+    top: 25px !important;
 }
 
 .delay-chat-box{
@@ -561,11 +568,11 @@ ul#emojis li.category ul.list li a:hover{
     color: var(--black);
     font-weight: 500;
     border-radius: 4px;
-    height: 30px;
-    font-size: 12px;
-    padding: 0.3rem 0;
+    height: 40px;
+    font-size: 13px;
+    padding: 0.6rem 0;
     cursor: pointer;
-    width: 90px;
+    width: 110px;
     margin: 0 0.5rem;
     border: 1px solid #D8D8D8;
 }
