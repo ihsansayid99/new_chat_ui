@@ -174,10 +174,15 @@ $(function() {
     })
 
 
-    //Sidebar slide
+    //User slide
     $('.header-utils button .btn-user-svg').click(function(){
         $('.toolbar-users').toggleClass('active-toolbar-users')
         $(this).parent().toggleClass('active-btn-toolbar-chat')
+    })
+
+    //Sidebar slide
+    $('.header-content-icon img').click(function(){
+        $('#sideNav').toggleClass('active-sidebar')
     })
 
     //Clickable user list
@@ -378,7 +383,7 @@ $(function() {
                             </div>
                             <div class="file-upload-close-btn">
                                 <button class="btn btn-clear">
-                                    <img src="./assets/img/upload-close-ic.svg" alt="">
+                                    <img src="./assets/img/upload-close-ic.svg" alt="" class="close-btn">
                                 </button>
                             </div>
                         </div>
@@ -717,31 +722,18 @@ $(function() {
         $('.text-chat-toolbar').text(tundaPengiriman[idBoxTemplate-1])
     })
 
-    window.onload = function(){
-        $.getJSON( "./chat.json", function( data ) {
-            var limit = 4
-            let chatMessage
-            chatMessage = data.data
-            var data = chatMessage.slice(0, limit)
-            $.each(chatMessage, function(key, val){
-                chatMessage2.push(val)
-            })
-            populateChatUser(chatMessage)
-            defaultActiveUser()
-        });
-
-        $.ajax({
-            type: "GET",
-            url: "http://139.180.184.25:3333/messages",
-            headers: {
-                "device-key": "0443d4c3-95fd-461c-bb0b-8b8f9b492122"
-            },
-            success: function (data) {
-                console.log(data)
-            }
+    $.getJSON( "./chat.json", function( data ) {
+        var limit = 4
+        let chatMessage
+        chatMessage = data.data
+        var data = chatMessage.slice(0, limit)
+        $.each(chatMessage, function(key, val){
+            chatMessage2.push(val)
         })
+        populateChatUser(chatMessage)
+        defaultActiveUser()
+    });
+    emojiLoad()
 
-        emojiLoad()
-    }
     heightUploadWrapper()
 });

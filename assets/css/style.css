@@ -78,13 +78,13 @@ button:focus{
 }
 
 .sidenav {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 65px);
     width: 100%;
     position: absolute;
     z-index: 1;
-    top: 80px;
+    top: 65px;
     right: 0;
-    background-color: var(--gray);
+    background-color: var(--white);
     overflow-x: hidden;
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -94,7 +94,7 @@ button:focus{
 
 .active-sidebar{
     /* width: 100%; */
-    transform: translateX(0)
+    transform: translateX(0) !important;
 }
 
 
@@ -231,7 +231,7 @@ background: #2496FF;
     position: absolute;
     right: 22px;
     visibility: hidden;
-    padding: 0.2rem;
+    padding: 0.9rem 1.4rem;
 }
 
 .chat-msg-utils_item::after{
@@ -251,13 +251,16 @@ background: #2496FF;
     font-weight: 600;
     color: #7A7A7A;
     width: 100%;
-    margin: 0.5rem 0;
-    padding: 0 1rem;
     cursor: pointer;
+    font-size: 12px;
+}
+
+.chat-msg-utils_item-info.reply-item{
+    margin-bottom: 0.7rem ;
 }
 
 .chat-msg-utils_item-info > img{
-    margin-right: 0.2rem;
+    margin-right: 0.7rem;
 }
 
 .chat-msg-utils_button{
@@ -357,24 +360,27 @@ background: #2496FF;
 .msg-text{
     color: #696969;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .msg-info-user{
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.2rem;
+    align-items: center;
 }
 
 .msg-info-user > div > p {
     font-weight: 600;
     color: #010101;
     margin: 0;
+    font-size: 12px;
 }
 
 .badge{
     display: unset;
     padding: 0.25em 0.6em;
+    font-size: 10px;
 }
 
 .badge-danger{
@@ -439,10 +445,11 @@ background: #2496FF;
 .wrapper-toolbar.template-chat{
     padding: 0.5rem;
     display: flex;
-    align-items:  flex-end;
+    align-items:  center;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    height: 55px !important;
 }
 
 .wrapper-toolbar.template-chat h6{
@@ -548,6 +555,7 @@ ul#emojis li.category ul.list li a:hover{
     color: #5A5A5A;
     border: 1px solid #D8D8D8;
     border-radius: 4px;
+    line-height: normal;
 }
 
 .emoticon-wrapper{
@@ -815,7 +823,6 @@ ul#emojis li.category ul.list li a:hover{
 }
 
 .pasteImageWrapper{
-    border: 1px solid var(--gray);
     height: inherit;
     cursor: pointer;
     padding: 0.4rem;
