@@ -332,7 +332,7 @@ $(function() {
                             </div>
                         </div>
                         <div class="chat-msg-utils" id="chat-utils-${elementx.id}">
-                            <div class="chat-msg-utils_item">
+                            <div class="chat-msg-utils_item ${elementx.from_me === true ? "chat-msg-utils_item_right" : "chat-msg-utils_item_left"}">
                                 <div class="chat-msg-utils_item-info reply-item">
                                     <img src="./assets/img/reply-ic.svg" />
                                     <span>Reply</span>
