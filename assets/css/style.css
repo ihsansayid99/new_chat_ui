@@ -431,7 +431,7 @@ background: #2496FF;
 .wrapper-toolbar{
     width: 100%;
     background-color: var(--white);
-    position: absolute;
+    position: fixed;
     bottom: calc(0px + 100px);
     height: 44px;
     border: 1px solid #D8D8D8;
