@@ -75,6 +75,8 @@ button:focus{
 
 .header-utils{
     padding: 1rem;
+    width: 30%;
+    display: flex;
 }
 
 .sidenav {
@@ -141,12 +143,12 @@ background: #2496FF;
 .header-content_name{
     margin-bottom: 0.1rem;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 15px;
 }
 
 .header-content_info{
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 12px;
 }
 
 .btn-clear{
@@ -502,6 +504,9 @@ ul#emojis li.category h2.title{
 
 ul#emojis li.category ul.list{
     padding: 10px 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    justify-items: center;
 }
 
 ul#emojis li.category ul.list li{
