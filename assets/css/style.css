@@ -254,28 +254,28 @@ background: #2496FF;
 .chat-msg-utils_item.chat-msg-utils_item_left::after{
     display: block;
     content: "";
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background-image: url('../img/arrow-chat-util-ic.svg');
     background-repeat: no-repeat;
     background-position: center bottom;
     position: absolute;
-    left: 70px;
-    top: -75px;
+    right: -19px;
+    top: -5px;
 }
 
-.chat-msg-utils_item.chat-msg-utils_item_right::after{
+.chat-msg-utils_item.chat-msg-utils_item_right::before{
     display: block;
     content: "";
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background-image: url('../img/arrow-chat-util-ic.svg');
     background-repeat: no-repeat;
     background-position: center bottom;
     position: absolute;
-    left: -22px;
-    top: -55px;
-    transform: rotate(60deg);
+    left: -19px;
+    top: 3px;
+    transform: rotate(180deg);
 }
 
 .chat-msg-utils_item-info{

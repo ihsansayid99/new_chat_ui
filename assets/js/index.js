@@ -370,6 +370,7 @@ $(function() {
             var idChat = $(this).closest('.chat-msg-utils_button').parent('.chat-msg-utils').attr('id')
             var idChatSingle = idChat.split("-")[2]
             var replyText = $(`#${idChat}`).siblings('.chat-msg-bubble').children('.msg-text').text()
+            var nameText = $(`#${idChat}`).siblings('.chat-msg-bubble').children('.msg-info-user').children('div').eq(0).children('p').text()
             $(this).closest('.chat-msg-utils_button').parent().children('.chat-msg-utils_item').toggleClass('active-chat-utils')
             $(`#${idChat} div .reply-item`).click(function(){
                 $('#section-reply-chat-wrapper').children().remove()
@@ -378,7 +379,7 @@ $(function() {
                         <div class="file-upload-preview">
                             <div class="file-upload-info">
                                 <input type="hidden" value="${idChatSingle}">
-                                <p>Ihsan</p>
+                                <p>${nameText}</p>
                                 <span>${replyText}</span>
                             </div>
                             <div class="file-upload-close-btn">
