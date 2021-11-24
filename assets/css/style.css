@@ -432,7 +432,7 @@ background: #2496FF;
     width: 100%;
     background-color: var(--white);
     position: absolute;
-    bottom: calc(0px + 10px);
+    bottom: calc(0px + 100px);
     height: 44px;
     border: 1px solid #D8D8D8;
     left: 0;
