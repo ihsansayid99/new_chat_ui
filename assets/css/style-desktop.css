@@ -2,10 +2,6 @@ html{
     font-family: 'Inter', sans-serif;
 }
 
-
-.test-css{
-    background: 1.4rem;
-
 :root{
     --white: #FFFFFF;
     --black: #000000;
